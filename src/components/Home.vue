@@ -2,13 +2,10 @@
   <v-carousel
     height="650px"
     hide-delimiter-background
-    show-arrows-on-hover
-    
-  >
+    show-arrows-on-hover>
     <v-carousel-item
       v-for="(slide, i) in slides"
       :key="i"
-      
     >
       <v-sheet
         :color="colors[i]"
