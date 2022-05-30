@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="mains">
         <v-app-bar
         elevation="4" fixed class="px-5"
         >
@@ -7,7 +7,7 @@
             <v-btn depressed>Портфолио</v-btn>
             <v-btn depressed>О нас</v-btn>
             <v-spacer></v-spacer>
-            <v-img src="/img/bim-logo.png" max-width="50" alt="bim-logo.png"></v-img>
+            <v-img src="/img/bim-logo.png" class="mt-5" max-width="90" alt="bim-logo.png"></v-img>
             <v-spacer></v-spacer>
             <v-btn depressed>Магазин</v-btn>
             <v-btn depressed>Контакты</v-btn>
