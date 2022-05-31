@@ -1,7 +1,6 @@
 <template>
     <div class="mains">
-        <v-app-bar
-        elevation="4" fixed class="px-5">
+        <v-app-bar depressed fixed class="px-5" >
             <v-btn depressed>Главная</v-btn>
             <v-btn depressed>Портфолио</v-btn>
             <v-btn depressed>О нас</v-btn>
