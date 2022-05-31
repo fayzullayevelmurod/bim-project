@@ -1,0 +1,478 @@
+{
+    "items": [
+        {
+          "action": "mdi-ticket",
+          "items": [{ "title": "Uy hayvonlari", "bool": false }, { "title": "Mashinalar", "bool": false }],
+          "title": "Attractions"
+        },
+        {
+          "action": "mdi-silverware-fork-knife",
+          "active": true,
+          "items": [
+            { "title": "Breakfast & brunch", "bool": false },
+            { "title": "New American", "bool": false},
+            { "title": "Sushi", "bool": false }
+          ],
+          "title": "Dining"
+        },
+        {
+          "action": "mdi-school",
+          "items": [{ "title": "List Item1", "bool": false }],
+          "title": "Education"
+        },
+        {
+          "action": "mdi-human-male-female-child",
+          "items": [{ "title": "List Item2", "bool": false }],
+          "title": "Family"
+        },
+        {
+          "action": "mdi-bottle-tonic-plus",
+          "items": [{ "title": "List Item3", "bool": false}],
+          "title": "Health"
+        },
+        {
+          "action": "mdi-briefcase",
+          "items": [{ "title": "List Item4", "bool": false }],
+          "title": "Office"
+        },
+        {
+          "action": "mdi-tag",
+          "items": [{ "title": "List Item5", "bool": false }],
+          "title": "Promotions"
+        }
+      ],
+      "models":  [
+        {
+          "id": 1,
+          "title": "Uy hayvonlari",
+          "image": [
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Mashinalar",
+          "image": [
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Uy hayvonlari",
+          "image": [
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Mashinalar",
+          "image": [
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "title": "Uy hayvonlari",
+          "image": [
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "title": "Uy hayvonlari",
+          "image": [
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "title": "Mashinalar",
+          "image": [
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "title": "Uy hayvonlari",
+          "image": [
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "title": "Mushuklar",
+          "image": [
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
+            }
+          ]
+        },
+        {
+          "id": 10,
+          "title": "Sherlar",
+          "image": [
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
+            }
+          ]
+        },
+        {
+          "id": 11,
+          "title": "Mushuklar",
+          "image": [
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
+            }
+          ]
+        },
+        {
+          "id": 12,
+          "title": "Sherlar",
+          "image": [
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
+            }
+          ]
+        },
+        {
+          "id": 13,
+          "title": "Breakfast & brunch",
+          "image": [
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
+            }
+          ]
+        },
+        {
+          "id": 14,
+          "title": "New American",
+          "image": [
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
+            }
+          ]
+        },
+        {
+          "id": 15,
+          "title": "Sushi",
+          "image": [
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
+            }
+          ]
+        },
+        {
+          "id": 16,
+          "title": "List Item1",
+          "image": [
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
+            }
+          ]
+        },
+        {
+          "id": 17,
+          "title": "List Item2",
+          "image": [
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
+            }
+          ]
+        },
+        {
+          "id": 18,
+          "title": "List Item3",
+          "image": [
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
+            }
+          ]
+        },
+        {
+          "id": 19,
+          "title": "List Item5",
+          "image": [
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
+            }
+          ]
+        },
+        {
+          "id": 20,
+          "title": "List Item4",
+          "image": [
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
+            }
+          ]
+        },
+        {
+          "id": 21,
+          "title": "List Item5",
+          "image": [
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
+            }
+          ]
+        },
+        {
+          "id": 22,
+          "title": "List Item4",
+          "image": [
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
+            }
+          ]
+        },
+        {
+          "id": 23,
+          "title": "List Item5",
+          "image": [
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
+            }
+          ]
+        },
+        {
+          "id": 24,
+          "title": "List Item4",
+          "image": [
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"
+            },
+            {
+              "src": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
+            }
+          ]
+        }
+      ]
+}
