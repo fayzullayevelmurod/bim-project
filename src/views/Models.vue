@@ -1,18 +1,24 @@
 <template>
   <div class="mt-12">
     <div class="relative">
-      <v-btn depressed width="300px" class="white d-block d-lg-none relative" @click="toggle = !toggle"
-        >
-          3d Models
-          <span v-if="toggle">
-            <v-icon>mdi-chevron-right</v-icon>
-          </span>
-          <span v-if="!toggle">
-            <v-icon>mdi-chevron-left</v-icon>
-          </span>
-        </v-btn
+      <v-btn
+        depressed
+        width="300px"
+        class="white d-block d-lg-none relative"
+        @click="toggle = !toggle"
       >
-      <div class="white d-block d-lg-none models" :class="toggle ? '' : 'models-active'">
+        3d Models
+        <span v-if="toggle">
+          <v-icon>mdi-chevron-right</v-icon>
+        </span>
+        <span v-if="!toggle">
+          <v-icon>mdi-chevron-left</v-icon>
+        </span>
+      </v-btn>
+      <div
+        class="white d-block d-lg-none models"
+        :class="toggle ? '' : 'models-active'"
+      >
         <v-list shaped title>
           <v-list-group
             v-for="(item, index) in items"
@@ -89,7 +95,11 @@
               v-for="model of models"
               :key="model.id"
             >
-              <v-card>
+              <v-card
+              @mouseover="showHover"
+              @mousemove="hoverImg = model.image[0].src"
+              @mouseleave="hideHover"
+              >
                 <v-carousel
                   height="200"
                   show-arrows-on-hover
@@ -107,8 +117,11 @@
                 </v-carousel>
 
                 <v-card-title class="py-1">
-                  <router-link :to="`model_one${model.id}`" class="text-decoration-none black--text hover">
-                     {{ model.id }} {{ model.title }}
+                  <router-link
+                    :to="`model_one${model.id}`"
+                    class="text-decoration-none black--text hover"
+                  >
+                    {{ model.id }} {{ model.title }}
                   </router-link>
                 </v-card-title>
 
@@ -123,6 +136,10 @@
         </v-container>
       </v-col>
     </v-row>
+    <div class="hoverEffect">
+      <!-- {{hoverImg[1]}} -->
+      <v-img width="100%" height="100%" :src="hoverImg"></v-img>
+    </div>
   </div>
 </template>
 
@@ -134,6 +151,14 @@ export default {
     items: datas.items,
     models: datas.models,
     toggle: true,
+    hover: true,
+    tagWidth: 0,
+    right: 0,
+    hoverImg: '',
+    halfWidth: 0,
+    clientWidth: 0,
+    layerX: 0,
+    arifmeticWidth: 0
   }),
   methods: {
     filterData(index) {
@@ -159,30 +184,73 @@ export default {
         }
       }
     },
+    showHover: function(event){
+      const element = event.srcElement;
+      const vidth = event.view.innerWidth/2;
+      const hoverEffect = document.querySelector('.hoverEffect');
+      if(this.hover){
+        this.tagWidth = event.clientX - event.offsetX;
+        this.halfWidth = event.clientX;
+        this.layerX = event.layerX;
+        this.arifmeticWidth = this.halfWidth - this.layerX;
+        this.clientWidth = element.clientWidth;
+        this.hover = false;
+        if(vidth < this.arifmeticWidth + (this.clientWidth/2)){
+          this.right = vidth*2 - this.tagWidth;
+          hoverEffect.style.left = 'auto'
+          hoverEffect.style.right = `${this.right}px`;
+        }
+        else{
+          this.right = this.tagWidth + this.clientWidth + 15;
+          hoverEffect.style.right = 'auto'
+          hoverEffect.style.left = `${this.right}px`;
+        }
+      }
+      else{}
+      hoverEffect.style.display = 'inline-block'
+    },
+    hideHover: function(event){
+      this.hover = true;
+      const hoverEffect = document.querySelector('.hoverEffect');
+      hoverEffect.style.display = 'none'
+    }
   },
 };
 </script>
 
 <style scoped>
-.relative{
+.relative {
   position: relative;
 }
-.models{
+.models {
   width: 300px;
   position: absolute;
   z-index: 2;
   top: 38px;
   left: -100%;
-  transition: .5s all ease;
+  transition: 0.5s all ease;
 }
-.models-active{
+.models-active {
   left: 0;
-  transition: .5s all ease;
+  transition: 0.5s all ease;
 }
-.hover{
-  transition: .5s ease all!important;
+.hover {
+  transition: 0.5s ease all !important;
 }
-.hover:hover{
-  text-decoration: underline!important;
+.hover:hover {
+  text-decoration: underline !important;
+}
+.hoverEffect{
+  width: 40vw;
+  height: 90vh;
+  background: white;
+  position: fixed;
+  bottom: 5vh;
+  display: none;
+  z-index: 100;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 40px black,
+              0 0 50px black;
 }
 </style>

@@ -29,7 +29,7 @@
             <b>
               {{model.title}}
             </b>
-            <v-alert outlined color="blue" class="ms-5 d-inline-block py-0 blue-gray text-h6">FREE</v-alert>
+            <v-alert small outlined color="blue" class="ms-5 d-inline-block py-0 blue-gray text-h6">PRO</v-alert>
           </div>
           <v-btn outlined color="blue" class="btn1 black--text" width="100%">
             <v-icon class="mr-1">mdi-download</v-icon>
