@@ -96,10 +96,48 @@
               :key="model.id"
             >
               <v-card
-              @mouseover="showHover"
-              @mousemove="hoverImg = model.image[0].src"
-              @mouseleave="hideHover"
+                @mouseover="showHover"
+                @mousemove="hoverImg = model.image[imageId].src"
+                @mouseleave="hideHover"
               >
+                <div class="carusel">
+                  <button class="button">
+                    <v-icon
+                      color="white"
+                      size="35px"
+                      @click="nextPrev(0, model.id)"
+                      @mousemove="modId = model.id"
+                      @mouseleave="modId = 0"
+                      >mdi-chevron-left</v-icon
+                    >
+                  </button>
+                  <button class="button">
+                    <v-icon
+                      color="white"
+                      size="35px"
+                      @click="nextPrev(1, model.id)"
+                      @mousemove="modId = model.id"
+                      @mouseleave="modId = 0"
+                      >mdi-chevron-right</v-icon
+                    >
+                  </button>
+                  <v-img
+                    height="100%"
+                    :src="model.image[0].src"
+                    @mousemove="modId = model.id"
+                    @mouseleave="modId = 0"
+                  ></v-img>
+                  <div class="btn-group" @mousemove="modId = model.id">
+                    <button
+                      @mousemove="modId = model.id"
+                      v-for="(item, i) in model.image"
+                      :key="i"
+                      @click="imgId(i, model.id)"
+                      :class="i == imageId ? 'box-shadow': ''"
+                    ></button>
+                  </div>
+                </div>
+                <!--
                 <v-carousel
                   height="200"
                   show-arrows-on-hover
@@ -115,7 +153,7 @@
                     ></v-carousel-item>
                   </router-link>
                 </v-carousel>
-
+-->
                 <v-card-title class="py-1">
                   <router-link
                     :to="`model_one${model.id}`"
@@ -140,6 +178,7 @@
       <!-- {{hoverImg[1]}} -->
       <v-img width="100%" height="100%" :src="hoverImg"></v-img>
     </div>
+    {{ modId}}{{ imageId }}
   </div>
 </template>
 
@@ -148,17 +187,19 @@ import datas from "@/datas.json";
 export default {
   name: "Models",
   data: () => ({
+    imageId: 0,
+    modId: 0,
     items: datas.items,
     models: datas.models,
     toggle: true,
     hover: true,
     tagWidth: 0,
     right: 0,
-    hoverImg: '',
+    hoverImg: "",
     halfWidth: 0,
     clientWidth: 0,
     layerX: 0,
-    arifmeticWidth: 0
+    arifmeticWidth: 0,
   }),
   methods: {
     filterData(index) {
@@ -184,36 +225,58 @@ export default {
         }
       }
     },
-    showHover: function(event){
+    showHover: function (event) {
       const element = event.srcElement;
-      const vidth = event.view.innerWidth/2;
-      const hoverEffect = document.querySelector('.hoverEffect');
-      if(this.hover){
+      const vidth = event.view.innerWidth / 2;
+      const hoverEffect = document.querySelector(".hoverEffect");
+      if (this.hover) {
+        this.imageId = 0;
         this.tagWidth = event.clientX - event.offsetX;
         this.halfWidth = event.clientX;
         this.layerX = event.layerX;
         this.arifmeticWidth = this.halfWidth - this.layerX;
         this.clientWidth = element.clientWidth;
         this.hover = false;
-        if(vidth < this.arifmeticWidth + (this.clientWidth/2)){
-          this.right = vidth*2 - this.tagWidth;
-          hoverEffect.style.left = 'auto'
+        if (vidth < this.arifmeticWidth + this.clientWidth / 2) {
+          this.right = vidth * 2 - this.tagWidth;
+          hoverEffect.style.left = "auto";
           hoverEffect.style.right = `${this.right}px`;
-        }
-        else{
+        } else {
           this.right = this.tagWidth + this.clientWidth + 15;
-          hoverEffect.style.right = 'auto'
+          hoverEffect.style.right = "auto";
           hoverEffect.style.left = `${this.right}px`;
         }
+      } else {
       }
-      else{}
-      hoverEffect.style.display = 'inline-block'
+      hoverEffect.style.display = "inline-block";
     },
-    hideHover: function(event){
+    hideHover: function (event) {
       this.hover = true;
-      const hoverEffect = document.querySelector('.hoverEffect');
-      hoverEffect.style.display = 'none'
-    }
+      const hoverEffect = document.querySelector(".hoverEffect");
+      hoverEffect.style.display = "none";
+      this.modId = 0;
+    },
+    imgId(id, modelId) {
+      this.hoverImg = this.models[modelId - 1].image[id].src;
+      this.imageId = id;
+    },
+    nextPrev(i, modelId) {
+      if (i == 1) {
+        if (this.models[modelId - 1].image.length - 1 == this.imageId) {
+          this.imageId = 0;
+        } else {
+          this.imageId++;
+        }
+        this.hoverImg = this.models[modelId - 1].image[this.imageId].src;
+      } else {
+        if (this.imageId == 0) {
+          this.imageId = this.models[modelId - 1].image.length - 1;
+        } else {
+          this.imageId--;
+        }
+        this.hoverImg = this.models[modelId - 1].image[this.imageId].src;
+      }
+    },
   },
 };
 </script>
@@ -240,7 +303,7 @@ export default {
 .hover:hover {
   text-decoration: underline !important;
 }
-.hoverEffect{
+.hoverEffect {
   width: 40vw;
   height: 90vh;
   background: white;
@@ -250,7 +313,52 @@ export default {
   z-index: 100;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 0 40px black,
-              0 0 50px black;
+  box-shadow: 0 0 40px black, 0 0 50px black;
+}
+.carusel {
+  height: 200px;
+  width: auto;
+  background: blue;
+  overflow: hidden;
+  position: relative;
+}
+.carusel .button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50deg);
+  z-index: 3;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+.carusel .button:first-child {
+  left: 8%;
+}
+.carusel .button:not(:first-child) {
+  right: 8%;
+}
+.carusel .btn-group {
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  transform: translateY(-100deg);
+  position: absolute;
+  z-index: 3;
+  padding: 0 10%;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+.carusel .btn-group button {
+  background: rgba(255, 255, 255, 0.525);
+  border-radius: 100px;
+  padding: 8px;
+}
+.carusel .btn-group .box-shadow {
+  background: white;
+}
+.carusel .btn-group button:not(:last-child) {
+  margin-right: 10%;
 }
 </style>
