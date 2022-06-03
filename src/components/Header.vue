@@ -1,15 +1,15 @@
 <template>
-    <div class="mains">
-        <v-app-bar depressed fixed class="px-5" >
-            <v-btn depressed>Главная</v-btn>
-            <v-btn depressed>Портфолио</v-btn>
-            <v-btn depressed>О нас</v-btn>
+    <div>
+        <v-app-bar depressed fixed class="px-5">
+            <v-btn class="d-none d-md-flex ma-2" depressed>Главная</v-btn>
+            <v-btn class="d-none d-md-flex ma-2" depressed>Портфолио</v-btn>
+            <v-btn class="d-none d-md-flex ma-2" depressed>О нас</v-btn>
             <v-spacer></v-spacer>
             <v-img src="/img/bim-logo.png" max-width="60" alt="bim-logo.png"></v-img>
             <v-spacer></v-spacer>
-            <v-btn depressed>Магазин</v-btn>
-            <v-btn depressed>Контакты</v-btn>
-            <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon></v-app-bar>
+            <v-btn class="d-none d-md-flex ma-2" depressed>Магазин</v-btn>
+            <v-btn class="d-none d-md-flex ma-2" depressed>Контакты</v-btn>
+            <v-app-bar-nav-icon class="d-flex d-md-none" @click.stop="drawer = !drawer"></v-app-bar-nav-icon></v-app-bar>
         <v-sheet>
         <v-container class="fill-height">
         <v-row
@@ -25,11 +25,11 @@
         >
         <v-list-item>
             <v-list-item-avatar>
-            <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
+            <v-img src="/img/bim-logo.png"></v-img>
             </v-list-item-avatar>
 
             <v-list-item-content>
-            <v-list-item-title>John Leider</v-list-item-title>
+            <v-list-item-title>BIM Project</v-list-item-title>
             </v-list-item-content>
         </v-list-item>
 
