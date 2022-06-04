@@ -1,12 +1,12 @@
 <template>
-  <div class="mt-12">
+  <div class="mt-12" style="background: #12232e!important;">
     <ModelHeader />
-    <v-container>
+    <v-container class="px-10">
       <v-row
         class="my-5"
         style="background: #007cc7; height: 550px; box-sizing: border-box"
       >
-        <v-col cols="7" style="padding: 0; height: 550px">
+        <v-col cols="12" md="7" style="padding: 0; height: 550px">
           <div class="img">
             <v-img width="100%" height="100%" :src="images[imgId].src"></v-img>
             <button class="btn" @click="nextPrev(false)">
@@ -17,7 +17,7 @@
             </button>
           </div>
         </v-col>
-        <v-col cols="5" style="background: #007cc7; padding: 0 30px">
+        <v-col cols="12" md="5" style="background: #007cc7; padding: 0 30px">
           <div
             class="text-center white--text"
             style="font-size: 40px; margin-top: 20px"
