@@ -1,6 +1,6 @@
 <template>
   <v-carousel height="650px" show-arrows-on-hover hide-delimiters>
-    <div class="home_wrapper">
+    <div class="home_wrapper" style="background-color: rgb(241, 251, 255)!important;">
       <v-carousel-item v-for="(slide, i) in slides" :key="i">
       <v-img :src="imgs[i]" height="100%">
         <v-row class="fill-height" align="center" justify="center">

@@ -1,6 +1,6 @@
 <template>
-  <v-container class="pa-4 text-center">
-    <v-card elevation="0">
+  <v-container class="pa-4 text-center"  style="background-color: #203647 !important;">
+    <v-card elevation="0" style="background-color: #203647 !important;" text--white>
       <h1 class="projecttitle">НАШИ ПРОЕКТЫ</h1>
       <p>
         С каждым днём у нас реализуются новые проекты, и каждый раз мы добавляем
@@ -8,7 +8,7 @@
       </p>
       <v-btn class="mb-5">Перейти</v-btn>
     </v-card>
-    <v-sheet class="mx-auto">
+    <v-sheet class="mx-auto" style="background-color: #203647 !important;">
       <v-slide-group v-model="model" class="pa-4" center-active show-arrows>
         <v-slide-item v-for="n in 15" :key="n" v-slot="{ active, toggle }">
           <v-card justify="center"

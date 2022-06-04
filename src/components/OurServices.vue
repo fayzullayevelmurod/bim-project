@@ -1,6 +1,6 @@
 <template class="ourservices">
   <v-container class="pa-4 text-center">
-    <v-row>
+    <v-row style="background-color: #203647 !important;">
       <v-col cols="12" md="5"  justify="center">
         <v-card class="pa-2">
           <h1 class="servicestitle">НАШИ УСЛУГИ</h1>
@@ -16,8 +16,8 @@
       <v-col cols="12" md="7">
         <v-row class="fill-height" justify="center">
             <v-col cols="7" md="4">
-              <router-link :to="{name: 'Models'}" style="text-decoration: none !important">
-                <v-card class="services_card pa-4 blue darken-4">
+              <router-link :to="{name: 'Models'}" style="text-decoration: none !important;">
+                <v-card class="services_card pa-4" style="background-color: #007CC7 !important;">
                     <v-img class="ma-5" src="/img/exterior.png"></v-img>
                     <h3 class="pa-2 white--text">Exterior</h3>
                 </v-card>
@@ -25,7 +25,7 @@
             </v-col>
             <v-col cols="7" md="4">
               <router-link :to="{name: 'Models'}" style="text-decoration: none !important">
-                <v-card class="services_card pa-4 blue darken-4">
+                <v-card class="services_card pa-4" style="background-color: #007CC7 !important;">
                 <v-img class="ma-5" src="/img/interior.png"></v-img>
                 <h3 class="pa-2 white--text">Interior</h3>
               </v-card>
@@ -33,7 +33,7 @@
             </v-col>
             <v-col cols="7" md="4">
               <router-link :to="{name: 'Models'}" style="text-decoration: none !important">
-                <v-card class="services_card pa-4 blue darken-4">
+                <v-card class="services_card pa-4" style="background-color: #007CC7 !important;">
                 <v-img class="ma-5" src="/img/planning.png"></v-img>
                 <h3 class="pa-2 white--text">Planning</h3>
               </v-card>
