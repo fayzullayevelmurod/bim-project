@@ -1,15 +1,14 @@
 <template>
   <div class="mt-12">
+    <ModelHeader />
     <v-container>
-      <router-link :to="{ name: 'Models' }"
-        >3D model</router-link
+      <v-row
+        class="my-5"
+        style="background: #007cc7; height: 550px; box-sizing: border-box"
       >
-      <h1 class="mt-10">3d Model name</h1>
-      <hr class="mt-2 mb-8">
-      <v-row>
-        <v-col cols="8">
+        <v-col cols="7" style="padding: 0; height: 550px">
           <div class="img">
-            <v-img width="100%" height="90vh" :src="images[imgId].src"></v-img>
+            <v-img width="100%" height="100%" :src="images[imgId].src"></v-img>
             <button class="btn" @click="nextPrev(false)">
               <v-icon size="60px" color="white">mdi-chevron-left</v-icon>
             </button>
@@ -17,35 +16,32 @@
               <v-icon size="60px" color="white">mdi-chevron-right</v-icon>
             </button>
           </div>
-          <div class="width-100 d-flex justify-center mt-5">
-            <div v-for="(img, index) in images" :key="index" class="mx-1 pa-1 imgCards" @click="imgId=index">
-              <v-img class="imgs" :src="img.src" width="50px" height="50px"></v-img>
-              <span :class="imgId == index ? 'active': ''"></span>
-            </div>
-          </div>
         </v-col>
-        <v-col cols="4">
-          <div class="text-h5">
-            <b>
-              {{model.title}}
-            </b>
-            <v-alert small outlined color="blue" class="ms-5 d-inline-block py-0 blue-gray text-h6">PRO</v-alert>
+        <v-col cols="5" style="background: #007cc7; padding: 0 30px">
+          <div
+            class="text-center white--text"
+            style="font-size: 40px; margin-top: 20px"
+          >
+            Кресло
           </div>
-          <v-btn outlined color="blue" class="btn1 black--text" width="100%">
-            <v-icon class="mr-1">mdi-download</v-icon>
-            Download
-            <v-spacer></v-spacer>
-            <span>600$</span>
+          <v-btn
+            outlined
+            rounded
+            color="white"
+            class="btn1 white--text py-8 my-5"
+            width="100%"
+            style="font-size: 35px"
+          >
+            $600
           </v-btn>
-          <div style="background: #f2f2f2;"  class="pa-5 mt-5 rounded">
-            <b class="">REVIEW</b>
-            <div v-for="(review, index) in reviews" :key="index">
-              <v-row class="my-1">
-                <v-col cols="4">{{review.title}}</v-col>
-                <v-col cols="8"><b>{{review.value}}</b></v-col>
-              </v-row>
-              <hr v-if="reviews.length-1 != index">
-
+          <div style="background: #007cc7" class="mt-5 pt-1 rounded white--text">
+            <div
+              v-for="(review, index) in reviews"
+              :key="index"
+              style="font-size: 30px; linear-height: 36px"
+              class="my-5"
+            >
+              <b class="mr-5">{{ review.title }}</b> {{ review.value }}
             </div>
           </div>
         </v-col>
@@ -55,62 +51,63 @@
 </template>
 
 <script>
-import datas from '@/datas.json'
+import datas from "@/datas.json";
+import ModelHeader from "@/components/ModelHeader.vue"
 
 export default {
-    name: 'ModelOne',
-    data(){
-        return{
-            model: this.getModel(),
-            images: this.getModelImg(),
-            imgId: 0,
-            reviews: [
-              {title: 'Platform:', value: "3dsMax 2013 + obj"},
-              {title: 'Render:', value: "Corona"},
-              {title: 'Size:', value: "160 MB"},
-              {title: 'Date:', value: "01.06.2022 16:06"},
-              {title: 'Form factor:', value: "Rectangle"},
-              {title: 'Style:', value: "Modern"},
-              {title: 'Material:', value: "Textile"},
-              {title: 'Color:', value: "red, blue"},
-            ]
-        }
+  name: "ModelOne",
+  components: {
+    ModelHeader
+  },
+  data() {
+    return {
+      model: this.getModel(),
+      images: this.getModelImg(),
+      imgId: 0,
+      reviews: [
+        { title: "Рендер :", value: "Corona" },
+        { title: "Размер :", value: "32mb" },
+        { title: "Число скачивании :", value: "120" },
+        { title: "Дата :", value: "12. 16. 2020 г." },
+      ],
+    };
+  },
+  methods: {
+    getModel() {
+      const id = Number(this.$route.params.id);
+      const model = datas.models[id - 1];
+      return model;
     },
-    methods: {
-        getModel(){
-            const id = Number(this.$route.params.id);
-            const model = datas.models[id-1];
-            return model;
-        },
-        getModelImg(){
-            const id = Number(this.$route.params.id);
-            const images = datas.models[id-1].image;
-            return images
-        },
-        nextPrev(t){
-          if(t){
-            if(this.imgId >= this.images.length-1){
-              this.imgId = 0;
-            }else{
-              this.imgId++;
-            }
-          }else{
-            if(this.imgId <= 0){
-              this.imgId = this.images.length - 1;
-            }else{
-              this.imgId--;
-            }
-          }
+    getModelImg() {
+      const id = Number(this.$route.params.id);
+      const images = datas.models[id - 1].image;
+      return images;
+    },
+    nextPrev(t) {
+      if (t) {
+        if (this.imgId >= this.images.length - 1) {
+          this.imgId = 0;
+        } else {
+          this.imgId++;
         }
-    }
-}
+      } else {
+        if (this.imgId <= 0) {
+          this.imgId = this.images.length - 1;
+        } else {
+          this.imgId--;
+        }
+      }
+    },
+  },
+};
 </script>
 
 <style scoped>
-.img{
-  position: relative!important;
+.img {
+  position: relative !important;
+  height: 100%;
 }
-.btn{
+.btn {
   position: absolute;
   top: 50%;
   transform: translateY(-30%);
@@ -120,42 +117,35 @@ export default {
   transition: 0.5s ease all;
   border-radius: 0 100px 100px 0;
 }
-.btn:last-child{
+.btn:last-child {
   right: 0;
   border-radius: 100px 0 0 100px;
 }
-.btn:hover{
-  background: rgba(128,128,128,0.7);
+.btn:hover {
+  background: rgba(128, 128, 128, 0.7);
 }
-.imgCards{
-  border: 1px solid rgba(128, 128, 128, 0.5);
+.imgCards {
   border-radius: 5px;
   transition: 0.5s ease all;
   position: relative;
   z-index: 1;
   overflow: hidden;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.imgCards span{
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: transparent;
-  z-index: 2;
+.imgCards .active {
+  width: 100% !important;
+  height: 100% !important;
 }
-.imgCards .active{
-  background: rgba(16, 116, 230, 0.5)
+
+.btn1 {
+  border-radius: 100px !important;
+  border: 3px solid white;
 }
-.btn1{
-  color: black!important;
-  border: 1px solid #2196f3;
-  transition: 0.5s ease all;
-  font-size: 25px;
-  padding: 20px!important;
-  text-transform: none;
-}
-.btn1:hover{
-  background: #2196f3!important;
+.btn1:hover {
+  background: #007cc7 !important;
 }
 </style>

@@ -1,10 +1,12 @@
 <template>
   <div class="mt-12">
+    <ModelHeader />
     <div class="relative">
       <v-btn
+        dark
         depressed
         width="300px"
-        class="white d-block d-lg-none relative"
+        class="transparent d-block d-lg-none relative"
         @click="toggle = !toggle"
       >
         3d Models
@@ -16,19 +18,31 @@
         </span>
       </v-btn>
       <div
-        class="white d-block d-lg-none models"
+        class="white d-inline-block d-lg-none models"
         :class="toggle ? '' : 'models-active'"
       >
-        <v-list shaped title>
+        <v-list
+          shaped
+          title
+          width="auto"
+          dark
+          style="background: #12232e !important"
+        >
           <v-list-group
+            dark
+            width="auto"
             v-for="(item, index) in items"
             :key="index"
             :prepend-icon="item.action"
             no-action
+            style="background: #12232e !important"
           >
-            <template v-slot:activator>
-              <v-list-item-content>
-                <v-list-item-title v-text="item.title"></v-list-item-title>
+            <template v-slot:activator style="background: #12232e !important">
+              <v-list-item-content style="background: #12232e !important">
+                <v-list-item-title
+                  v-text="item.title"
+                  style="background: #12232e !important"
+                ></v-list-item-title>
               </v-list-item-content>
             </template>
 
@@ -36,6 +50,7 @@
               v-for="child in item.items"
               :key="child.title"
               class="pa-0"
+              style="background: #12232e !important"
             >
               <v-list-item-content class="py-0">
                 <v-checkbox
@@ -53,17 +68,45 @@
     </div>
 
     <v-row>
-      <v-col class="d-none d-lg-block" lg="3">
-        <v-list shaped title>
+      <v-col class="d-none d-lg-inline-block" lg="3">
+        <v-list
+          shaped
+          title
+          style="background: none !important; color: white !important"
+          dark
+        >
           <v-list-group
             v-for="(item, index) in items"
             :key="index"
             :prepend-icon="item.action"
-            no-action
+            color="white"
+            class="white--text"
+            style="background: none !important; color: white !important"
+            dark
           >
-            <template v-slot:activator>
-              <v-list-item-content>
-                <v-list-item-title v-text="item.title"></v-list-item-title>
+            <template
+              v-slot:activator
+              style="
+                width: auto;
+                background: none !important;
+                color: white !important;
+              "
+            >
+              <v-list-item-content
+                style="
+                  width: auto;
+                  background: none !important;
+                  color: white !important;
+                "
+              >
+                <v-list-item-title
+                  style="
+                    width: auto;
+                    background: none !important;
+                    color: white !important;
+                  "
+                  v-text="item.title"
+                ></v-list-item-title>
               </v-list-item-content>
             </template>
 
@@ -85,6 +128,7 @@
           </v-list-group>
         </v-list>
       </v-col>
+
       <v-col cols="12" lg="9">
         <v-container>
           <v-row>
@@ -99,9 +143,11 @@
                 @mouseover="showHover"
                 @mousemove="hoverImg = model.image[imageId].src"
                 @mouseleave="hideHover"
+                dark
+                style="background: #007cc7 !important"
               >
                 <div class="carusel">
-                  <button class="button">
+                  <button class="button btn-left">
                     <v-icon
                       color="white"
                       size="35px"
@@ -111,7 +157,7 @@
                       >mdi-chevron-left</v-icon
                     >
                   </button>
-                  <button class="button">
+                  <button class="button btn-right">
                     <v-icon
                       color="white"
                       size="35px"
@@ -121,52 +167,39 @@
                       >mdi-chevron-right</v-icon
                     >
                   </button>
-                  <v-img
-                    height="100%"
-                    :src="model.image[0].src"
-                    @mousemove="modId = model.id"
-                    @mouseleave="modId = 0"
-                  ></v-img>
+                  <router-link :to="`/model_one${model.id}`">
+                    <v-img
+                      height="100%"
+                      :src="model.image[0].src"
+                      @mousemove="modId = model.id"
+                      @mouseleave="modId = 0"
+                    ></v-img>
+                  </router-link>
                   <div class="btn-group" @mousemove="modId = model.id">
                     <button
                       @mousemove="modId = model.id"
                       v-for="(item, i) in model.image"
                       :key="i"
                       @click="imgId(i, model.id)"
-                      :class="i == imageId ? 'box-shadow': ''"
-                    ></button>
+                      :class="model.id == modId ? 'box-shadow' : ''"
+                    >
+                      <span :class="i == imageId ? 'span-active' : ''"></span>
+                    </button>
                   </div>
                 </div>
-                <!--
-                <v-carousel
-                  height="200"
-                  show-arrows-on-hover
-                  hide-delimiter-background
-                >
-                  <router-link :to="`/model_one${model.id}`">
-                    <v-carousel-item
-                      v-for="(item, i) in model.image"
-                      :key="i"
-                      :src="item.src"
-                      reverse-transition="fade-transition"
-                      transition="fade-transition"
-                    ></v-carousel-item>
-                  </router-link>
-                </v-carousel>
--->
                 <v-card-title class="py-1">
                   <router-link
                     :to="`model_one${model.id}`"
-                    class="text-decoration-none black--text hover"
+                    class="text-decoration-none white--text hover"
                   >
-                    {{ model.id }} {{ model.title }}
+                    {{ model.title }}
                   </router-link>
                 </v-card-title>
 
-                <v-card-actions>
-                  <v-btn depressed>3<v-icon>mdi-currency-usd</v-icon></v-btn>
+                <v-card-actions class="px-4">
+                  <sapn style="font-size: 16px">Pro</sapn>
                   <v-spacer></v-spacer>
-                  <v-btn depressed><v-icon>mdi-download</v-icon>34</v-btn>
+                  <v-btn outlined rounded class="white--text">$20</v-btn>
                 </v-card-actions>
               </v-card>
             </v-col>
@@ -175,17 +208,19 @@
       </v-col>
     </v-row>
     <div class="hoverEffect">
-      <!-- {{hoverImg[1]}} -->
       <v-img width="100%" height="100%" :src="hoverImg"></v-img>
     </div>
-    {{ modId}}{{ imageId }}
   </div>
 </template>
 
 <script>
+import ModelHeader from "@/components/ModelHeader.vue"
 import datas from "@/datas.json";
 export default {
   name: "Models",
+  components: {
+    ModelHeader
+  },
   data: () => ({
     imageId: 0,
     modId: 0,
@@ -200,6 +235,7 @@ export default {
     clientWidth: 0,
     layerX: 0,
     arifmeticWidth: 0,
+    newModel: null,
   }),
   methods: {
     filterData(index) {
@@ -257,25 +293,35 @@ export default {
       this.modId = 0;
     },
     imgId(id, modelId) {
-      this.hoverImg = this.models[modelId - 1].image[id].src;
+      this.findModel(modelId);
+      this.hoverImg = this.newModel.image[id].src;
       this.imageId = id;
     },
     nextPrev(i, modelId) {
+      this.findModel(modelId);
       if (i == 1) {
-        if (this.models[modelId - 1].image.length - 1 == this.imageId) {
+        if (this.newModel.image.length - 1 == this.imageId) {
           this.imageId = 0;
         } else {
           this.imageId++;
         }
-        this.hoverImg = this.models[modelId - 1].image[this.imageId].src;
+        this.hoverImg = this.newModel.image[this.imageId].src;
       } else {
         if (this.imageId == 0) {
-          this.imageId = this.models[modelId - 1].image.length - 1;
+          this.imageId = this.newModel.image.length - 1;
         } else {
           this.imageId--;
         }
-        this.hoverImg = this.models[modelId - 1].image[this.imageId].src;
+        this.hoverImg = this.newModel.image[this.imageId].src;
       }
+    },
+    findModel(modelId) {
+      const dat = null;
+      this.models.forEach((item) => {
+        if (item.id == modelId) {
+          this.newModel = item;
+        }
+      });
     },
   },
 };
@@ -313,12 +359,12 @@ export default {
   z-index: 100;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 0 40px black, 0 0 50px black;
+  box-shadow: 0 0 40px #007cc7, 0 0 50px #007cc7;
 }
 .carusel {
   height: 200px;
   width: auto;
-  background: blue;
+  background: #007cc7;
   overflow: hidden;
   position: relative;
 }
@@ -326,25 +372,28 @@ export default {
   position: absolute;
   top: 50%;
   transform: translateY(-50deg);
-  z-index: 3;
+  z-index: 1;
   width: 40px;
   height: 40px;
   background: rgba(0, 0, 0, 0.2);
   border-radius: 50%;
 }
 .carusel .button:first-child {
-  left: 8%;
+  left: -100%;
+  transition: 0.5s ease all;
 }
 .carusel .button:not(:first-child) {
-  right: 8%;
+  right: -100%;
+  transition: 0.5s ease all;
 }
 .carusel .btn-group {
+  transition: 0.5s ease all;
   width: 100%;
   left: 0;
-  bottom: 0;
+  bottom: -100%;
   transform: translateY(-100deg);
   position: absolute;
-  z-index: 3;
+  z-index: 1;
   padding: 0 10%;
   padding-bottom: 10px;
   display: flex;
@@ -354,11 +403,42 @@ export default {
   background: rgba(255, 255, 255, 0.525);
   border-radius: 100px;
   padding: 8px;
+  position: relative;
+  overflow: hidden;
 }
-.carusel .btn-group .box-shadow {
+/* .carusel .btn-group .box-shadow{
+} */
+.carusel .btn-group .box-shadow .span-active {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: white;
 }
 .carusel .btn-group button:not(:last-child) {
   margin-right: 10%;
+}
+.btn-group .box-shadow {
+  background: white;
+}
+/* .btn-group .box-shadow .span-active{
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+} */
+.carusel:hover .btn-group {
+  transition: 0.5s ease all;
+  bottom: 0;
+}
+.carusel:hover .btn-left {
+  left: 8%;
+  transition: 0.5s ease all;
+}
+.carusel:hover .btn-right {
+  right: 8%;
+  transition: 0.5s ease all;
 }
 </style>
