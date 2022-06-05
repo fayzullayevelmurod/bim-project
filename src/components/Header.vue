@@ -1,32 +1,85 @@
 <template>
-  <main id="main">
-    <header class="header">
-      <nav class="navbar">
-        <ul class="left__links">
-          <li class="left__link">
-            <a href="#"  class="nav_item d-none d-md-flex">Главная</a>
-          </li>
-          <li class="left__link">
-            <a href="#" class="nav_item d-none d-md-flex">Портфолио</a>
-          </li>
-          <li class="left__link">
-            <a href="#" class="nav_item d-none d-md-flex">О нас</a>
-          </li>
-        </ul>
-        <div class="logo">
-          <img src="/img/bim-logo-white.png" alt="logo" />
-        </div>
-        <ul class="right__links">
-          <li class="shop">
-            <a href="#" class="nav_item d-none d-md-flex"><i class="fa-solid fa-cart-shopping"></i>Магазин</a>
-          </li>
-          <li class="contacts">
-            <a href="#" class="nav_item d-none d-md-flex"><i class="fa-solid fa-phone"></i>Контакты</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-  </main>
+  <div>
+    <main id="main">
+      <header class="header">
+        <nav class="navbar">
+          <ul class="left__links">
+            <li class="left__link">
+              <a href="#" class="nav_item d-none d-md-flex">Главная</a>
+            </li>
+            <li class="left__link">
+              <a href="#" class="nav_item d-none d-md-flex">Портфолио</a>
+            </li>
+            <li class="left__link">
+              <a href="#" class="nav_item d-none d-md-flex">О нас</a>
+            </li>
+          </ul>
+          <div class="logo">
+            <img src="/img/bim-logo-white.png" alt="logo" />
+          </div>
+          <ul class="right__links">
+            <li class="shop">
+              <a href="#" class="nav_item d-none d-md-flex"
+                ><i class="fa-solid fa-cart-shopping"></i>Магазин</a
+              >
+            </li>
+            <li class="contacts">
+              <a href="#" class="nav_item d-none d-md-flex"
+                ><i class="fa-solid fa-phone"></i>Контакты</a
+              >
+            </li>
+            <li>
+              <v-app-bar-nav-icon
+                class="d-flex d-md-none"
+                style="
+                  color: #fff !important;
+                  font-size: 90px !important;
+                  z-index: 3 !important;
+                "
+                @click.stop="drawer = !drawer"
+              ></v-app-bar-nav-icon>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </main>
+    <v-navigation-drawer
+      v-model="drawer"
+      absolute
+      temporary
+      height="100%"
+      fixed
+      style="
+        background-color: #203647 !important;
+        z-index: 40 !important;
+        color: #fff !important;
+      "
+    >
+      <v-list-item>
+        <v-list-item-avatar>
+          <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
+        </v-list-item-avatar>
+
+        <v-list-item-content>
+          <v-list-item-title>John Leider</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+
+      <v-divider></v-divider>
+
+      <v-list dense>
+        <v-list-item v-for="item in items" :key="item.title" link>
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+  </div>
 </template>
 
 <script>
@@ -125,6 +178,7 @@ export default {
 }
 
 #main .header .navbar .logo {
+  flex: 1;
   width: 140px;
   height: 140px;
   display: -webkit-box;
@@ -239,8 +293,8 @@ export default {
   content: "";
   position: absolute;
   inset: 0;
-  top: -43%;
-  left: -35%;
+  top: -38%;
+  left: -28%;
   width: 180px;
   height: 180px;
   border-radius: 50%;

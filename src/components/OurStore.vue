@@ -1,13 +1,14 @@
 <template>
-  <v-container class="pa-4 text-center">
-    <v-card md="8" elevation="0">
-      <h1 class="storetitle">НАШ МАГАЗИН</h1>
-      <p>
-        С каждым днём у нас реализуются новые проекты, и каждый раз мы добавляем
-        в своё портфолио новые проекты, здесь показано самые последние проекты.
+  <v-container class="pa-4 mt-16 text-center"
+    style="background-color: #203647 !important">
+    <v-card md="8" elevation="0"
+      style="background-color: #203647 !important">
+      <h1 class="storetitle" style="color: #fff">НАШ МАГАЗИН</h1>
+      <p style="color: #fff">
+        Архитектурные услуги компании включают тщательное изучение объекта, подготовку концептуального решения и рабочих чертежей. Мы учитываем все требования, предъявляемые к зданиям, и предлагаем оптимальные решения для реализации поставленных задач.
       </p>
     </v-card>
-        <v-sheet class="mx-auto">
+        <v-sheet class="mx-auto" style="background-color: #203647 !important">
       <v-slide-group v-model="model" class="pa-4" center-active show-arrows>
         <v-slide-item v-for="n in 15" :key="n" v-slot="{ active, toggle }">
           <v-card justify="center"
@@ -50,7 +51,7 @@ export default {
   margin-right: 20px !important;
   flex: 1;
   display: block;
-  background-color: black;
+  background-color: white;
 }
 .storetitle:after{
   content: '';
@@ -58,6 +59,6 @@ export default {
   margin-left: 20px !important;
   flex: 1;
   display: block;
-  background-color: black;
+  background-color: white;
 }
 </style>

@@ -1,11 +1,12 @@
 <template>
   <div>
     <Home />
+    <About />
     <OurServices />
     <OurProject />
     <OurStore />
-    <About />
     <Maps />
+    <Footer />
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import OurServices from "@/components/OurServices";
 import OurStore from "@/components/OurStore";
 import About from "@/components/About";
 import Maps from "@/components/Maps";
+import Footer from "@/components/Footer";
 
 export default {
   name: 'DefaultView',
@@ -26,6 +28,7 @@ export default {
     OurStore,
     About,
     Maps,
+    Footer,
   }
 }
 </script>

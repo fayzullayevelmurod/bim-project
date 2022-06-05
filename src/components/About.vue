@@ -1,10 +1,10 @@
 <template>
-    <v-container  class="pa-4"  style="background-color: #203647 !important;">
+    <v-container  class="pa-4 mt-16"  style="background-color: #203647 !important;">
         <v-row justify="center">
             <v-col cols="11" md="6" style="background-color: #203647 !important;">
-                <h1 class="abouttitle">О НАС</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In accusantium neque blanditiis optio inventore nulla ut unde excepturi atque dolor iusto quisquam accusamus, ducimus expedita nostrum esse! Maiores, velit nihil.</p>
-                <v-btn depressed class="ma-2">Перейти</v-btn>
+                <h1 class="abouttitle" style="color: #fff">О НАС</h1>
+                <p style="color: #fff">Архитектурные услуги компании включают тщательное изучение объекта, подготовку концептуального решения и рабочих чертежей. Мы учитываем все требования, предъявляемые к зданиям, и предлагаем оптимальные решения для реализации поставленных задач.</p>
+                <v-btn class="btn ma-2" outlined rounded elevation="2">Перейти</v-btn>
             </v-col>
             <v-col style="margin: 0; padding: 0;" cols="10" md="6">
                 <v-img src="/img/exterior1.jpg"></v-img>
@@ -21,6 +21,17 @@ export default {
 
 
 <style scoped>
+.btn{
+  width: 140px;
+  color: #fff !important;
+  transition: all 1s ease !important;
+  border: 2px solid #007CC7 !important;
+}
+.btn:hover{
+  border: transparent !important;
+  color: #fff !important;
+  background-color: #007CC7 !important;
+}
 .abouttitle{
   display: flex !important;
   align-items: center !important;
@@ -31,7 +42,7 @@ export default {
   margin-right: 20px !important;
   flex: 1;
   display: block;
-  background-color: black;
+  background-color: white;
 }
 .abouttitle:after{
   content: '';
@@ -39,6 +50,6 @@ export default {
   margin-left: 20px !important;
   flex: 1;
   display: block;
-  background-color: black;
+  background-color: white;
 }
 </style>
