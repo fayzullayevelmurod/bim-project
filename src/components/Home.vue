@@ -1,15 +1,17 @@
 <template>
-  <v-carousel cycle height="650px" show-arrows-on-hover hide-delimiters>
+  <v-carousel
+    id="Home"
+    cycle
+    height="650px"
+    show-arrows-on-hover
+    hide-delimiters
+  >
     <div class="home_wrapper relative">
       <div class="home_text">
         <h1>BIM Project Uz</h1>
         <p>Благополучие нашего города с нашими зданиями</p>
       </div>
-      <v-carousel-item
-        v-for="i in imgs"
-        :key="i"
-        style="overflow: hidden;"
-      >
+      <v-carousel-item v-for="i in imgs" :key="i" style="overflow: hidden">
         <v-img :src="i" height="100%">
           <v-row class="fill-height" align="center" justify="center">
             <div

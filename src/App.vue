@@ -1,8 +1,8 @@
 <template>
-    <v-app style="background-color: #12232E;">
-      <Header />
-      <router-view />
-    </v-app>
+  <v-app style="background-color: #12232e">
+    <Header />
+    <router-view />
+  </v-app>
 </template>
 
 <script>
@@ -16,3 +16,8 @@ export default {
 };
 </script>
 
+<style scoped>
+#app {
+  scroll-behavior: smooth !important;
+}
+</style>

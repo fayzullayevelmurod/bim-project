@@ -1,5 +1,5 @@
 <template class="ourservices">
-  <v-container class="text-center mt-16">
+  <v-container id="Services" class="mt-16">
     <v-row style="background-color: #203647 !important">
       <v-col cols="12" md="12">
         <h1 class="servicestitle">Наша платформа</h1>
@@ -19,18 +19,18 @@
         </v-card>
       </v-col>
       <v-col cols="12" md="7">
-        <v-row class="fill-height" justify="center">
+        <v-row class="fill-height text-center" justify="center">
           <v-col cols="7" md="4">
             <router-link
               :to="{ name: 'Models' }"
-              style="text-decoration: none !important"
+              style="text-decoration: none !important;"
             >
               <v-card
                 class="services_card pa-6"
-                style="background-color: #007cc7 !important"
+                style="background-color: #007cc7 !important;  width:200px !important; height:200px !important;"
               >
                 <v-img class="ma-4" src="/img/3dmodel.png"></v-img>
-                <h3 class="white--text">3d моделлирование</h3>
+                <h3 class="white--text">3D моделлирование</h3>
               </v-card>
             </router-link>
           </v-col>
@@ -41,7 +41,7 @@
             >
               <v-card
                 class="services_card pa-8"
-                style="background-color: #007cc7 !important"
+                style="background-color: #007cc7 !important;  width:200px !important; height:200px !important;"
               >
                 <v-img class="ma-4" src="/img/gotovy_project.png"></v-img>
                 <h3 class="white--text">Готовые проекты</h3>
@@ -51,11 +51,11 @@
           <v-col cols="7" md="4">
             <router-link
               :to="{ name: 'Models' }"
-              style="text-decoration: none !important"
+              style="text-decoration: none !important;"
             >
               <v-card
                 class="services_card pa-6"
-                style="background-color: #007cc7 !important"
+                style="background-color: #007cc7 !important;  width:200px !important; height:200px !important;"
               >
                 <v-img class="ma-4" src="/img/konstruksiya.png"></v-img>
                 <h3 class="white--text">Конструкция</h3>
@@ -97,6 +97,18 @@ export default {
   display: flex !important;
   align-items: center;
   color: #fff;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 49px;
+}
+p {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
 }
 .servicestitle:after {
   content: "";

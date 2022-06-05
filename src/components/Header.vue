@@ -5,23 +5,47 @@
         <nav class="navbar">
           <ul class="left__links">
             <li class="left__link">
-              <a href="#" class="nav_item d-none d-md-flex">Главная</a>
+              <a href="#Home" class="nav_item d-none d-md-flex">Главная</a>
             </li>
             <li class="left__link">
-              <a href="#" class="nav_item d-none d-md-flex">Портфолио</a>
+              <a href="#Project" class="nav_item d-none d-md-flex">Портфолио</a>
             </li>
             <li class="left__link">
-              <a href="#" class="nav_item d-none d-md-flex">О нас</a>
+              <a href="#About" class="nav_item d-none d-md-flex">О нас</a>
             </li>
           </ul>
+          <v-spacer></v-spacer>
           <div class="logo">
             <img src="/img/bim-logo-white.png" alt="logo" />
           </div>
+          <v-spacer></v-spacer>
           <ul class="right__links">
             <li class="shop">
-              <a href="#" class="nav_item d-none d-md-flex"
-                ><i class="fa-solid fa-cart-shopping"></i>Магазин</a
-              >
+              <v-menu offset-y>
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn
+                    elevation="0"
+                    depressed
+                    dark
+                    v-bind="attrs"
+                    v-on="on"
+                    id="shop_item"
+                    class="d-none d-md-flex"
+                    ><i class="fa-solid fa-cart-shopping"></i>Магазин
+                  </v-btn>
+                </template>
+                <v-list style="background-color: #007cc7 !important">
+                  <v-list-item>
+                    <router-link :to="{ name: 'Models' }"><v-list-item-title><v-btn style="color: #fff !important;" depressed>3D моделлар</v-btn></v-list-item-title></router-link>
+                  </v-list-item>
+                  <v-list-item>
+                   <router-link :to="{ name: 'Models' }"><v-list-item-title><v-btn style="color: #fff !important;" depressed>Готовые проекты</v-btn></v-list-item-title></router-link>
+                  </v-list-item>
+                  <v-list-item>
+                   <router-link :to="{ name: 'Models' }"><v-list-item-title><v-btn style="color: #fff !important;" depressed>Конструкция</v-btn></v-list-item-title></router-link>
+                  </v-list-item>
+                </v-list>
+              </v-menu>
             </li>
             <li class="contacts">
               <a href="#" class="nav_item d-none d-md-flex"
@@ -139,7 +163,7 @@ export default {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 90%;
+  max-width: 1440px;
   height: 100%;
   margin: 0 auto;
   -webkit-box-pack: justify;
@@ -156,8 +180,8 @@ export default {
   -ms-flex-align: center;
   align-items: center;
   -webkit-box-flex: 1;
-  -ms-flex: 1 1 400px;
-  flex: 1 1 400px;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 #main .header .navbar .left__links .left__link {
@@ -192,8 +216,8 @@ export default {
 }
 
 #main .header .navbar .logo img {
-  width: 140px;
-  height: 90%;
+  width: 153px;
+  height: 100%;
 }
 
 #main .header .navbar .right__links {
@@ -207,42 +231,49 @@ export default {
   -ms-flex-pack: end;
   justify-content: flex-end;
   -webkit-box-flex: 1;
-  -ms-flex: 1 1 400px;
-  flex: 1 1 400px;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 #main .header .navbar .right__links .shop {
-  margin: 0 10px;
+  /* margin: 0 10px; */
   font-size: 18px;
   border-radius: 30px;
   cursor: pointer;
 }
 
-#main .header .navbar .right__links .shop a {
-  color: #eefbfb;
-  border: 3px solid #007cc7;
-  border-radius: 30px;
-  padding: 7px 18px;
-  -webkit-transition: ease 0.5s;
-  transition: ease 0.5s;
+#main .header .navbar .right__links .shop #shop_item {
+  color: #eefbfb !important;
+  border: 3px solid #007cc7 !important;
+  border-radius: 30px !important;
+  padding: 7px 18px !important;
+  -webkit-transition: ease 0.5s !important;
+  transition: ease 0.5s !important;
+  background-color: none !important;
 }
 
-#main .header .navbar .right__links .shop a i {
-  -webkit-transition: ease 0.5s;
+#main .header .navbar .right__links .shop #shop_item i {
+  -webkit-transition: ease 0.5s !important;
   transition: ease 0.5s;
   margin-right: 15px;
-  margin-top: 5px;
+  margin-top: 2px;
+  font-size: 20px;
 }
 
-#main .header .navbar .right__links .shop a:hover {
+#main .header .navbar .right__links .shop #shop_item:hover {
   background-color: #007cc7;
 }
 
-#main .header .navbar .right__links .shop a:hover i {
+#main .header .navbar .right__links .shop #shop_item:hover i {
   -webkit-transform: translateX(-5px);
   transform: translateX(-5px);
 }
-
+.v-btn:not(.v-btn--round).v-size--default {
+  height: 47px;
+  min-width: 100px;
+  padding: 0 16px;
+  background-color: transparent;
+}
 #main .header .navbar .right__links .contacts {
   padding: 10px 20px;
   margin: 0 10px;
@@ -282,8 +313,8 @@ export default {
 }
 
 #main .active__header .navbar .logo {
-  width: 120px;
-  height: 120px;
+  width: 90px;
+  height: 140px;
   position: relative;
   -webkit-transition: ease 0.5s;
   transition: ease 0.5s;
@@ -293,8 +324,8 @@ export default {
   content: "";
   position: absolute;
   inset: 0;
-  top: -38%;
-  left: -28%;
+  top: -15%;
+  left: -11%;
   width: 180px;
   height: 180px;
   border-radius: 50%;
