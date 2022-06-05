@@ -6,7 +6,7 @@
         class="my-5"
         style="background: #007cc7; height: 550px; box-sizing: border-box"
       >
-        <v-col cols="12" md="7" style="padding: 0; height: 550px">
+        <v-col cols="12" md="6" style="padding: 0; height: 550px">
           <div class="img">
             <v-img width="100%" height="100%" :src="images[imgId].src"></v-img>
             <button class="btn" @click="nextPrev(false)">
@@ -17,9 +17,9 @@
             </button>
           </div>
         </v-col>
-        <v-col cols="12" md="5" style="background: #007cc7; padding: 0 30px">
+        <v-col cols="12" md="6" class="margin-bottom" style="background: #007cc7; padding: 0 30px">
           <div
-            class="text-center white--text"
+            class="text-center white--text text-logo"
             style="font-size: 40px; margin-top: 20px"
           >
             Кресло
@@ -39,7 +39,7 @@
               v-for="(review, index) in reviews"
               :key="index"
               style="font-size: 30px; linear-height: 36px"
-              class="my-5"
+              class="my-5 text-item"
             >
               <b class="mr-5">{{ review.title }}</b> {{ review.value }}
             </div>
@@ -138,14 +138,25 @@ export default {
 }
 .imgCards .active {
   width: 100% !important;
-  height: 100% !important;
-}
-
+  height: 100% !important;}
 .btn1 {
   border-radius: 100px !important;
   border: 3px solid white;
 }
 .btn1:hover {
   background: #007cc7 !important;
+}
+
+@media ( max-width: 500px){
+  .text-logo{
+    font-size: 30px !important;
+  }
+  .btn1{
+    font-size: 30px !important;
+    padding: 20px 0 !important;
+  }
+  .text-item{
+    font-size: 25px !important;
+  }
 }
 </style>
