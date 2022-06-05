@@ -117,6 +117,7 @@ export default {
   -webkit-transition: ease 0.5s;
   transition: ease 0.5s;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 #main .header .navbar .left__links .left__link a:hover {
@@ -124,8 +125,8 @@ export default {
 }
 
 #main .header .navbar .logo {
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
