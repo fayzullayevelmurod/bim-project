@@ -5,7 +5,7 @@
     style="background-color: #203647 !important"
   >
     <v-row justify="center">
-      <v-col cols="11" md="6" style="background-color: #203647 !important">
+      <v-col cols="11" md="6" class="abouttext" style="background-color: #203647 !important">
         <h1 class="abouttitle" style="color: #fff">О НАС</h1>
         <p style="color: #fff">
           Архитектурные услуги компании включают тщательное изучение объекта,
@@ -67,11 +67,31 @@ p {
   background-color: white;
 }
 .abouttitle:after {
-  content: "";
-  height: 4px;
+  content: "" !important;
+  height: 4px !important;
   margin-left: 20px !important;
-  flex: 1;
-  display: block;
-  background-color: white;
+  flex: 1 !important;
+  display: block !important;
+  background-color: white !important;
+}
+@media only screen and (max-width: 960px){
+  p{
+    text-align: center !important;
+  }
+  .abouttext{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+  }
+}
+@media (max-width: 570px) {
+  h1 {
+    font-size: 37px !important;
+  }
+  p {
+    margin-top: 30px;
+    font-size: 18px !important;
+  }
 }
 </style>

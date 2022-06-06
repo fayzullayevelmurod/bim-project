@@ -62,4 +62,15 @@ li {
   margin: 10px 0 !important;
   list-style: none !important;
 }
+@media (max-width: 570px) {
+  a {
+    font-size: 16px;
+  }
+  p {
+    font-size: 18px;
+  }
+  .footerimg {
+  width: 150px !important;
+}
+}
 </style>

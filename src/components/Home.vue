@@ -61,10 +61,20 @@ export default {
   position: relative;
   z-index: 1;
   font-size: 80px;
+  font-style: normal;
+  font-weight: 600;
 }
 .home_text p {
   position: relative;
   z-index: 1;
   font-size: 25px;
+}
+@media (max-width: 570px) {
+  h1 {
+      font-size: 70px !important;
+  }
+  p {
+      font-size: 22px !important;
+  }
 }
 </style>

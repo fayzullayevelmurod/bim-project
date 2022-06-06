@@ -158,8 +158,16 @@ export default {
     width: 350px;
   }
   .btn {
-    width: 100%;
+    width: 50%;
     padding: 0 !important;
+  }
+}
+@media (max-width: 570px) {
+  h1 {
+    font-size: 37px !important;
+  }
+  p {
+    font-size: 18px !important;
   }
 }
 @media (max-width: 445px) {

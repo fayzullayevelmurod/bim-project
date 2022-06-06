@@ -4,7 +4,7 @@
       class="d-flex white--text transparent"
       style="align-items: center"
     >
-      <div class="links">
+      <div class="links d-none d-md-flex">
         <a href="#" class="link">Главная</a>
         <a href="#About" class="link">О нас</a>
         <a href="#Project" class="link">Портфолио</a>
@@ -59,14 +59,14 @@
             ><i class="fa-solid fa-phone"></i>Контакты
           </a>
         </span>
-        <v-btn color="pink" class="d-none" dark @click="drawer = !drawer">
+        <v-btn elevation="0" width="10px !important" class="d-flex d-md-none" dark @click="drawer = !drawer">
           <v-icon>mdi-menu</v-icon>
         </v-btn>
       </div>
     </v-container>
     <div class="img-logo">
       <div class="relative" :class="header ? 'img-logo-active' : ''">
-        <router-link :to="{name: 'DefaultView'}">
+        <router-link :to="{ name: 'DefaultView' }">
           <img
             src="/img/bim-logo-white.png"
             width="100%"
@@ -85,11 +85,11 @@
     >
       <v-list-item>
         <v-list-item-avatar>
-          <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
+          <v-img src="/img/bim-logo-white.png"></v-img>
         </v-list-item-avatar>
 
         <v-list-item-content>
-          <v-list-item-title>John Leider</v-list-item-title>
+          <v-list-item-title>BIM Project</v-list-item-title>
         </v-list-item-content>
 
         <v-list-item-content>
@@ -230,11 +230,11 @@ export default {
       header: false,
       drawer: false,
       items: [
-        { title: "Главная", icon: "mdi-view-dashboard" },
-        { title: "Портфолио", icon: "mdi-forum" },
-        { title: "О нас", icon: "mdi-view-dashboard" },
-        { title: "Магазин", icon: "mdi-forum" },
-        { title: "Контакты", icon: "mdi-forum" },
+        { title: "Главная"},
+        { title: "Портфолио"},
+        { title: "О нас"},
+        { title: "Магазин"},
+        { title: "Контакты"},
       ],
     };
   },
@@ -257,6 +257,18 @@ export default {
 </script>
 
 <style scoped>
+.v-btn:not(.v-btn--round).v-size--default[data-v-61dd7a3d] {
+    height: 0px !important;
+    min-width: 0px !important;
+    padding: 0 0px !important;
+    background-color: transparent;
+}
+.v-btn:not(.v-btn--round).v-size--default[data-v-61dd7a3d] {
+    height: 0px !important;
+    min-width: 0px !important;
+    padding: 20px 20px !important;
+    background-color: transparent;
+}
 .header {
   position: fixed;
   width: 100%;
@@ -266,8 +278,8 @@ export default {
   background-color: transparent;
   transition: 0.5s ease all;
 }
-a{
-  text-decoration: none;;
+a {
+  text-decoration: none;
 }
 .header-active {
   background: #12232e;
@@ -283,7 +295,7 @@ a{
   justify-content: center;
 }
 .img-logo .relative {
-  padding: 20px 10px 20px 30px;
+  padding: 20px 10px 20px 20px;
   background: transparent;
   width: 150px;
   height: 150px;
@@ -328,7 +340,7 @@ a{
   color: #eefbfb !important;
   border: 3px solid #007cc7 !important;
   border-radius: 30px !important;
-  padding: 7px 18px !important;
+  padding: 20px 18px !important;
   -webkit-transition: ease 0.5s !important;
   transition: ease 0.5s !important;
   background-color: none !important;

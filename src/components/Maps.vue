@@ -5,18 +5,32 @@
         <h1 class="maptitle">Социальная сеть</h1>
       </v-col>
       <v-col cols="12" md="2" class="messengers">
-        <a class="facebook" href="#"
-          ><i class="telegram fa-brands fa-facebook"></i
-        ></a>
-        <a class="youtube" href="#"
-          ><i class="instagram fa-brands fa-instagram"></i
-        ></a>
-        <a class="telegram" href="#"
-          ><i class="youtube fa-brands fa-youtube"></i
-        ></a>
-        <a class="instagram" href="#"
-          ><i class="telegram fa-brands fa-telegram"></i
-        ></a>
+        <!-- <div class=" d-flex d-md-none">
+          <a class="facebook  d-none d-md-flex" href="#"
+            ><i class="telegram fa-brands fa-facebook"></i
+          ></a>
+          <a class="youtube d-none d-md-flex" href="#"
+            ><i class="instagram fa-brands fa-instagram"></i
+          ></a>
+          <a class="telegram  d-none d-md-flex" href="#"
+            ><i class="youtube fa-brands fa-youtube"></i
+          ></a>
+          <a class="instagram  d-none d-md-flex" href="#"
+            ><i class="telegram fa-brands fa-telegram"></i
+          ></a>
+        </div> -->
+          <a class="facebook  d-none d-md-flex" href="#"
+            ><i class="telegram fa-brands fa-facebook"></i
+          ></a>
+          <a class="youtube  d-none d-md-flex" href="#"
+            ><i class="instagram fa-brands fa-instagram"></i
+          ></a>
+          <a class="telegram  d-none d-md-flex" href="#"
+            ><i class="youtube fa-brands fa-youtube"></i
+          ></a>
+          <a class="instagram  d-none d-md-flex" href="#"
+            ><i class="telegram fa-brands fa-telegram"></i
+          ></a>
       </v-col>
       <v-col class="maps" cols="12" md="10">
         <iframe
@@ -96,5 +110,27 @@ iframe {
 }
 .maps {
   height: 400px !important;
+}
+@media only screen and (max-width: 960px) {
+  .messengers {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-direction: column-reverse !important;
+  }
+  .maptitle:after {
+    content: "";
+    height: 4px;
+    margin-left: 20px !important;
+    flex: 1 !important;
+    background-color: #fff;
+    display: block;
+  }
+}
+@media (max-width: 570px) {
+  h1 {
+    font-size: 37px !important;
+  }
 }
 </style>
