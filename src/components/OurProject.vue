@@ -17,57 +17,56 @@
         для реализации поставленных задач.
       </p>
     </v-card>
-  
-   
-    <v-sheet
-    class="mx-auto m-0 transparent"
-    dark
-    width="100%"
-  >
-    <v-slide-group
-      v-model="model"
-      multiple
-      show-arrows
-      center-active
-      style="width: 100% !important;"
-    >
-      <v-slide-item
-        v-for="n in 8"
-        :key="n"
-        v-slot="{ toggle }"
+
+    <v-sheet class="mx-auto m-0 transparent" dark width="100%">
+      <v-slide-group
+        v-model="model"
+        multiple
+        show-arrows
+        center-active
+        style="width: 100% !important"
       >
-      <v-card @click="toggle" color="#007cc7" class="mx-2">
-        <v-row class="row">
-          <v-col cols="12" sm="6">
-            <v-img width="100%" height="100%" src="/img/project__background__1.jpg"></v-img>
-          </v-col>
-          <v-col cols="0" sm="6">
-            <div
-                  style="
-                    margin: 0;
-                    padding: 0;
-                    width: 100%;
-                    height: 100%;
-                  "
-                >
-                  <h1 class="py-4">Проект №{{n}}</h1>
-                  <p style="font-weight: 300 !important;">Площадь : <span>19182</span></p>
-                  <p style="font-weight: 300 !important;">Комнаты : : <span>22</span></p>
-                  <p style="font-weight: 300 !important;">Этаж : : <span>22</span></p>
-                  <p style="font-weight: 500 !important;">Цена : : <span style="font-weight: 300 !important;">22</span></p>
-                  <v-btn depressed outlined rounded color="#fff" class="button">Обсудить проект</v-btn>
+        <v-slide-item v-for="n in 8" :key="n" v-slot="{ toggle }">
+          <v-card @click="toggle" color="#007cc7" class="mx-2">
+            <v-row class="row">
+              <v-col cols="12" sm="6">
+                <v-img
+                  width="100%"
+                  height="100%"
+                  src="/img/project__background__1.jpg"
+                ></v-img>
+              </v-col>
+              <v-col cols="0" sm="6">
+                <div style="margin: 0; padding: 0; width: 100%; height: 100%">
+                  <h1 class="py-4">Проект №{{ n }}</h1>
+                  <p style="font-weight: 300 !important">
+                    Площадь : <span>19182</span>
+                  </p>
+                  <p style="font-weight: 300 !important">
+                    Комнаты : : <span>22</span>
+                  </p>
+                  <p style="font-weight: 300 !important">
+                    Этаж : : <span>22</span>
+                  </p>
+                  <p style="font-weight: 500 !important">
+                    Цена : : <span style="font-weight: 300 !important">22</span>
+                  </p>
+                  <v-btn depressed outlined rounded color="#fff" class="button"
+                    >Обсудить проект</v-btn
+                  >
                 </div>
-          </v-col>
-        </v-row>
-      </v-card>
-      </v-slide-item>
-    </v-slide-group>
-  </v-sheet>
-   <div style="width: 100% !important; text-align: center;">
-    <v-btn class="btn my-5 mt-10 px-15" outlined rounded elevation="2"
-      >Перейти к проектам</v-btn
-    >
-   </div>
+              </v-col>
+            </v-row>
+          </v-card>
+        </v-slide-item>
+      </v-slide-group>
+    </v-sheet>
+    <div style="width: 100% !important; text-align: center">
+      <v-container>
+        <v-btn class="btn my-5 mt-10 px-15" outlined rounded elevation="2"
+          >Перейти к проектам</v-btn>
+      </v-container>
+    </div>
   </v-container>
 </template>
 
@@ -145,21 +144,26 @@ export default {
   display: block;
   background-color: #fff;
 }
-.button{
+.button {
   text-transform: none !important;
   font-weight: 300 !important;
 }
-.row{
-  height: 350px !important; width: 450px 
+.row {
+  height: 350px !important;
+  width: 450px;
 }
-@media(max-width: 600px){
-  .row{
-    height: 250px!important;
+@media (max-width: 600px) {
+  .row {
+    height: 250px !important;
     width: 350px;
+  }
+  .btn {
+    width: 100%;
+    padding: 0 !important;
   }
 }
 @media (max-width: 445px) {
-  .row{
+  .row {
     width: 80vw !important;
   }
 }

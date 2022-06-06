@@ -1,11 +1,13 @@
 <template>
   <v-container
     id="Store"
-    class="pa-4 mt-16 pb-10 text-center"
+    class="pa-4 mt-16 pb-10 px-0 text-center"
     style="background-color: #203647 !important"
   >
     <v-card md="8" elevation="0" style="background-color: #203647 !important">
-      <h1 class="storetitle" style="color: #fff">НАШ МАГАЗИН</h1>
+      <v-container>
+        <h1 class="storetitle" style="color: #fff">НАШ МАГАЗИН</h1>
+      </v-container>
       <p style="color: #fff">
         Архитектурные услуги компании включают тщательное изучение объекта,
         подготовку концептуального решения и рабочих чертежей. Мы учитываем все
@@ -27,7 +29,12 @@
       >
         <v-slide-item v-for="(model, n) in models" :key="n" class="mb-0 pb-0">
           <v-card justify="center" class="ma-2 mb-0 pb-0">
-            <v-card class="mx-auto mb-0 pb-0" width="200" height="340" color="#007cc7">
+            <v-card
+              class="mx-auto mb-0 pb-0"
+              width="200"
+              height="340"
+              color="#007cc7"
+            >
               <v-carousel
                 height="200"
                 width="100%"
@@ -57,11 +64,11 @@
         </v-slide-item>
       </v-slide-group>
     </v-sheet>
-    <div style="width: 100% !important; text-align: center;">
-    <v-btn class="btn my-5 mt-10 px-15" outlined rounded elevation="2"
-      >Перейти к проектам</v-btn
-    >
-   </div>
+    <div style="width: 100% !important; text-align: center">
+      <v-btn class="btn my-5 mt-10 px-15" outlined rounded elevation="2"
+        >Перейти к проектам</v-btn
+      >
+    </div>
   </v-container>
 </template>
 
@@ -122,5 +129,11 @@ p {
   flex: 1;
   display: block;
   background-color: white;
+}
+@media (max-width: 600px) {
+  .btn {
+    width: 100%;
+    padding: 0 !important;
+  }
 }
 </style>
