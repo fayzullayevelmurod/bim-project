@@ -38,7 +38,7 @@
               </v-col>
               <v-col cols="0" sm="6">
                 <div style="margin: 0; padding: 0; width: 100%; height: 100%">
-                  <h1 class="py-4">Проект №{{ n }}</h1>
+                  <h1 class="cardtitle py-4">Проект №{{ n }}</h1>
                   <p style="font-weight: 300 !important">
                     Площадь : <span>19182</span>
                   </p>
@@ -76,43 +76,22 @@ export default {
   data: () => ({
     model: null,
   }),
-  mounted() {
-    $(".shoping__slider.owl-carousel").owlCarousel({
-      loop: true,
-      margin: 10,
-      nav: true,
-      autoplay: true,
-      autoplayTimeout: 3500,
-      autoplayHoverPause: true,
-      responsive: {
-        0: {
-          items: 1,
-        },
-        600: {
-          items: 3,
-        },
-        1000: {
-          items: 4,
-        },
-      },
-    });
-  },
 };
 </script>
 
 <style scoped>
-.btn {
+.btn{
   padding: 0 100px !important;
   color: #fff !important;
   transition: all 1s ease !important;
   border: 2px solid #007cc7 !important;
 }
-.btn:hover {
+.btn:hover{
   border: transparent !important;
   color: #fff !important;
   background-color: #007cc7 !important;
 }
-.projecttitle {
+.projecttitle{
   display: flex !important;
   align-items: center !important;
   font-family: "Montserrat";
@@ -148,17 +127,39 @@ export default {
   text-transform: none !important;
   font-weight: 300 !important;
 }
+.v-application p {
+    margin-left: 10px;
+    margin-bottom: 8px;
+}
+.v-application .py-4 {
+    margin-left: 10px;
+    padding-top: 0px !important;
+    padding-bottom: 9px !important;
+}
+.v-btn:not(.v-btn--round).v-size--default {
+    /* margin-left: 10px; */
+    height: 36px;
+    min-width: 64px;
+    padding: 0 16px;
+    margin-bottom: 10px;
+}
+.cardtitle{
+  font-size: 25px;
+}
 .row {
-  height: 350px !important;
-  width: 450px;
+  max-height: 650px !important;
+  width: 400px;
 }
 @media (max-width: 600px) {
+  .v-btn:not(.v-btn--round).v-size--default {
+    width: 150px;
+}
   .row {
     height: 250px !important;
     width: 350px;
   }
   .btn {
-    width: 50%;
+    width: 55% !important;
     padding: 0 !important;
   }
 }

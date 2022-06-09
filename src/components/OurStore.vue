@@ -31,8 +31,8 @@
           <v-card justify="center" class="ma-2 mb-0 pb-0">
             <v-card
               class="mx-auto mb-0 pb-0"
-              width="200"
-              height="340"
+              width="250"
+              height="300"
               color="#007cc7"
             >
               <v-carousel
@@ -54,7 +54,7 @@
 
               <v-container class="mb-0 pb-0">
                 <v-card-actions>
-                  <sapn style="font-size: 16px">Pro</sapn>
+                  <span style="font-size: 16px">Pro</span>
                   <v-spacer></v-spacer>
                   <v-btn outlined rounded class="white--text">$20</v-btn>
                 </v-card-actions>
@@ -85,6 +85,9 @@ export default {
 </script>
 
 <style scoped>
+.v-card__title {
+    padding: 5px 16px;
+}
 .btn {
   padding: 0 100px !important;
   color: #fff !important;
