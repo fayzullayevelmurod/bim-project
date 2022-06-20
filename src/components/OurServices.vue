@@ -1,5 +1,5 @@
 <template class="ourservices">
-  <v-container id="Services" class="mt-16">
+  <v-container id="Services" class="mt-16 mb-16">
     <v-row style="background-color: #203647 !important">
       <v-col cols="12" md="12">
         <h1 class="servicestitle" style="text-align: center;">Наша платформа</h1>

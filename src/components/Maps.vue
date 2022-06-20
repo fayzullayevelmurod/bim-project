@@ -5,20 +5,20 @@
         <h1 class="maptitle">Социальная сеть</h1>
       </v-col>
       <v-col cols="12" md="2" class="messengers">
-        <!-- <div class=" d-flex d-md-none">
-          <a class="facebook  d-none d-md-flex" href="#"
+        <div class="messenger_mobile d-flex d-md-none">
+          <a class="facebook_mobile   d-flex d-md-none" href="#"
             ><i class="telegram fa-brands fa-facebook"></i
           ></a>
-          <a class="youtube d-none d-md-flex" href="#"
+          <a class="youtube_mobile  d-flex d-md-none" href="#"
             ><i class="instagram fa-brands fa-instagram"></i
           ></a>
-          <a class="telegram  d-none d-md-flex" href="#"
+          <a class="telegram_mobile  d-flex d-md-none" href="#"
             ><i class="youtube fa-brands fa-youtube"></i
           ></a>
-          <a class="instagram  d-none d-md-flex" href="#"
+          <a class="instagram_mobile  d-flex d-md-none" href="#"
             ><i class="telegram fa-brands fa-telegram"></i
           ></a>
-        </div> -->
+        </div>
           <a class="facebook  d-none d-md-flex" href="#"
             ><i class="telegram fa-brands fa-facebook"></i
           ></a>
@@ -58,6 +58,9 @@ export default {
   justify-content: space-around !important;
   flex-direction: column !important;
 }
+.messenger_mobile a{
+  margin: 0 15px !important;
+}
 .messengers a {
   margin: 20px 0;
 }
@@ -65,6 +68,9 @@ export default {
   color: #fff !important;
   transition: all 0.5s ease !important;
   font-size: 50px !important;
+}
+.messengers a{
+  text-decoration: none !important;
 }
 .messengers a .facebook:hover {
   color: #1877f2 !important;
@@ -88,7 +94,7 @@ export default {
 }
 .maptitle {
   display: flex !important;
-  align-items: center;
+  text-align: center !important;
   color: #fff;
   font-family: "Montserrat";
   font-style: normal;

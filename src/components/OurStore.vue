@@ -30,9 +30,9 @@
         <v-slide-item v-for="(model, n) in models" :key="n" class="mb-0 pb-0">
           <v-card justify="center" class="ma-2 mb-0 pb-0">
             <v-card
-              class="mx-auto mb-0 pb-0"
+              class="store_card mx-auto mb-0 pb-0"
               width="250"
-              height="300"
+              height="320"
               color="#007cc7"
             >
               <v-carousel
@@ -86,7 +86,7 @@ export default {
 
 <style scoped>
 .v-card__title {
-    padding: 5px 16px;
+  padding: 5px 16px;
 }
 .btn {
   padding: 0 100px !important;
@@ -135,7 +135,7 @@ p {
 }
 @media (max-width: 600px) {
   .btn {
-    width: 50%;
+    width: 70%;
     padding: 0 !important;
   }
 }
@@ -145,6 +145,11 @@ p {
   }
   p {
     font-size: 18px !important;
+  }
+}
+@media (max-width: 450px) {
+  .store_card {
+    width: 250px !important;
   }
 }
 </style>

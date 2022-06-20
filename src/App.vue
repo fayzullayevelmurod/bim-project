@@ -15,9 +15,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-#app {
-  scroll-behavior: smooth !important;
-}
-</style>

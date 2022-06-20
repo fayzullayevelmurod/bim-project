@@ -27,10 +27,11 @@
         style="width: 100% !important"
       >
         <v-slide-item v-for="n in 8" :key="n" v-slot="{ toggle }">
-          <v-card @click="toggle" color="#007cc7" class="mx-2">
+          <v-card @click="toggle" color="#007cc7" class="project_card mx-2">
             <v-row class="row">
-              <v-col cols="12" sm="6">
+              <v-col class="project_wrapper" cols="12" sm="6">
                 <v-img
+                class="project_img"
                   width="100%"
                   height="100%"
                   src="/img/project__background__1.jpg"
@@ -80,6 +81,9 @@ export default {
 </script>
 
 <style scoped>
+#Project{
+  margin: 0 auto !important;
+}
 .btn{
   padding: 0 100px !important;
   color: #fff !important;
@@ -150,30 +154,37 @@ export default {
   max-height: 650px !important;
   width: 400px;
 }
-@media (max-width: 600px) {
+@media (max-width: 599px) {
   .v-btn:not(.v-btn--round).v-size--default {
     width: 150px;
-}
-  .row {
-    height: 250px !important;
-    width: 350px;
+  }
+  .project_wrapper{
+    height: 300px !important;
+  }
+ .row {
+    text-align: center !important;
+    /* height: 595px !important; */
+    width: 350px !important;
+  }
+  .row .project_img{
+    height: 100% !important;
   }
   .btn {
-    width: 55% !important;
+    width: 70% !important;
     padding: 0 !important;
   }
 }
 @media (max-width: 570px) {
   h1 {
-    font-size: 37px !important;
+    font-size: 30px !important;
   }
   p {
     font-size: 18px !important;
   }
 }
-@media (max-width: 445px) {
+@media (max-width: 375px){
   .row {
-    width: 80vw !important;
+    width: 275px !important;
   }
 }
 </style>
