@@ -1,7 +1,7 @@
 <template>
   <div class="header" :class="header ? 'header-active' : ''">
     <v-container
-      class="d-flex white--text transparent"
+      class="header_in d-flex white--text transparent"
       style="align-items: center"
     >
       <div class="links d-none d-md-flex">
@@ -196,6 +196,9 @@ export default {
 </script>
 
 <style scoped>
+.header_in{
+  margin: 0 auto !important;
+}
 .v-btn:not(.v-btn--round).v-size--default[data-v-61dd7a3d] {
   height: 0px !important;
   min-width: 0px !important;
