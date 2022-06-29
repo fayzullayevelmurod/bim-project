@@ -69,6 +69,34 @@
           <v-icon>mdi-menu</v-icon>
         </v-btn>
       </div>
+      <div class="btn-lang">
+        <v-menu offset-y>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+              elevation="0"
+              depressed
+              dark
+              v-bind="attrs"
+              v-on="on"
+              id="btn-group"
+              class="d-none d-md-flex"
+               style="background-color: #007cc7;"
+              >Ru
+            </v-btn>
+          </template>
+          <v-list style="background-color: #007cc7;">
+            <v-list-item>
+              <v-list-item-title style="color: white; cursor: pointer;"
+                  >Uz</v-list-item-title>
+            </v-list-item>
+            <v-list-item>
+              <v-list-item-title style="color: white; cursor: pointer;"
+                  >Eng</v-list-item-title
+                >
+            </v-list-item>
+          </v-list>
+        </v-menu>
+      </div>
     </v-container>
     <div class="img-logo">
       <div class="relative" :class="header ? 'img-logo-active' : ''">
@@ -113,46 +141,69 @@
         <v-list-item>
           <v-list-item-content>
             <v-list-item-title
-              ><a href="#" class="link">Главная</a></v-list-item-title
+              ><a href="#" class="linkmobile">Главная</a></v-list-item-title
             >
             <v-list-item-title
-              ><a href="#About" class="link">О нас</a></v-list-item-title
+              ><a href="#About" class="linkmobile">О нас</a></v-list-item-title
             >
             <v-list-item-title
-              ><a href="#Project" class="link">Портфолио</a></v-list-item-title
+              ><a href="#Project" class="linkmobile">Портфолио</a></v-list-item-title
+            >
+            <v-list-item-title
+              ><a href="#" class="linkmobile"
+                >Контакты
+              </a></v-list-item-title
             >
             <v-list-item-title
               ><router-link :to="{ name: 'Models' }"
-                ><v-list-item-title
-                  ><v-btn style="color: #fff !important" depressed
-                    >3D моделлар</v-btn
-                  ></v-list-item-title
-                ></router-link
+                ><a href="#" class="linkmobile"
+                >3D моделлар
+              </a>
+                </router-link
               ></v-list-item-title
             >
-            <v-list-item-title>
-              <router-link :to="{ name: 'Models' }"
-                ><v-list-item-title
-                  ><v-btn style="color: #fff !important" depressed
-                    >Готовые проекты</v-btn
-                  ></v-list-item-title
-                ></router-link
-              >
-            </v-list-item-title>
-            <v-list-item-title>
-              <router-link :to="{ name: 'Models' }"
-                ><v-list-item-title
-                  ><v-btn style="color: #fff !important" depressed
-                    >Конструкция</v-btn
-                  ></v-list-item-title
-                ></router-link
-              >
-            </v-list-item-title>
             <v-list-item-title
-              ><a href="#" class="nav_item d-none d-md-flex"
-                ><i class="fa-solid fa-phone"></i>Контакты
-              </a></v-list-item-title
+              ><router-link :to="{ name: 'Models' }"
+                ><a href="#" class="linkmobile"
+                >Готовые проекты
+              </a>
+                </router-link
+              ></v-list-item-title
             >
+            <v-list-item-title
+              ><router-link :to="{ name: 'Models' }"
+                ><a href="#" class="linkmobile"
+                >Конструкция
+              </a>
+                </router-link
+              ></v-list-item-title
+            >
+            <v-menu offset-y>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+              elevation="0"
+              depressed
+              dark
+              v-bind="attrs"
+              v-on="on"
+              id="btn-group"
+              class="d-none d-md-flex"
+               style="background-color: #007cc7;"
+              >Ru
+            </v-btn>
+          </template>
+          <v-list style="background-color: #007cc7;">
+            <v-list-item>
+              <v-list-item-title style="color: white; cursor: pointer;"
+                  >Uz</v-list-item-title>
+            </v-list-item>
+            <v-list-item>
+              <v-list-item-title style="color: white; cursor: pointer;"
+                  >Eng</v-list-item-title
+                >
+            </v-list-item>
+          </v-list>
+        </v-menu>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -166,16 +217,7 @@ export default {
     return {
       header: false,
       drawer: false,
-      // items: [
-      //   { title: "Главная" },
-      //   { title: "Портфолио" },
-      //   { title: "О нас" },
-      //   { title: "Магазин", arr: [
-      //     {title: "3d model", to:"/models"}
-      //   ]},
-      //   { title: "Контакты" },
-      // ],
-    };
+    }; 
   },
   methods: {
     Toggle() {
@@ -256,6 +298,14 @@ a {
   display: flex;
   align-items: center;
 }
+.btn-lang {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  padding: 0px 0px !important;
+  margin: 0px 0px !important;
+}
 .links {
   position: relative;
   z-index: 3;
@@ -265,6 +315,10 @@ a {
   color: white;
   font-size: 20px;
   transition: 0.5s ease all;
+}
+.linkmobile{
+  color: white;
+  font-size: 17px !important;
 }
 .link:not(:last-child) {
   margin-right: 50px;
